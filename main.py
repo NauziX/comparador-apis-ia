@@ -1,8 +1,10 @@
 # main.py
 
+
+import os
 from dotenv import load_dotenv
 from apis.openai_api import obtener_respuesta_openai
-from apis.huggingface_api import obtener_respuesta_huggingface
+from apis.ai21_api import obtener_respuesta_ai21
 
 
 def obtener_entrada_usuario():
@@ -18,13 +20,13 @@ def main():
 
     # Obtener respuestas de las APIs
     respuesta_openai = obtener_respuesta_openai(consulta)
-    respuesta_huggingface = obtener_respuesta_huggingface(consulta)
+    respuesta_ai21 = obtener_respuesta_ai21(consulta)
 
     # Mostrar los resultados
     print("\nRespuesta de OpenAI:")
     print(respuesta_openai)
-    print("\nRespuesta de Hugging Face:")
-    print(respuesta_huggingface)
+    print("\nRespuesta de ai21")
+    print(respuesta_ai21)
 
 
 if __name__ == "__main__":
